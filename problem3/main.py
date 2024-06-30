@@ -1,4 +1,14 @@
 def playing_domino(cards, deck):
+    if not cards or not deck:
+        return []
+
+    for card in cards:
+        for domino in deck:
+            if card == domino:
+                return [card]
+            elif card[0] == domino[1] or card[1] == domino[0]:
+                return [card, domino]
+
     return []
 
 if __name__ == "__main__":
